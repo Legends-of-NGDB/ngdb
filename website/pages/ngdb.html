@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+   <title>NGDB™</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            background-color: white;
+            overflow-x: hidden;
+        }
+        .box-with-color {
+            border-radius: 20px;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            background-color: white;
+            color: black;
+            margin: 20px;
+        }
+        body.dark-theme .box-with-color {
+            background-color: black;
+            color: white;
+        }
+        body.dark-theme {
+            background-color: black;
+            color: white;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        h5 {
+            margin-top: 20px;
+        }
+        #header {
+            width: 100%;
+        }
+        #navbar {
+            width: 100%;
+        }
+        .mobile-nav-toggle {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+        @media (max-width: 991px) {
+            #navbar ul {
+                display: none;
+            }
+            .mobile-nav-toggle {
+                display: block;
+            }
+            #navbar.navbar-mobile {
+                position: fixed;
+                overflow: hidden;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.9);
+                transition: 0.3s;
+                z-index: 999;
+            }
+            #navbar.navbar-mobile ul {
+                display: block;
+                position: absolute;
+                top: 55px;
+                right: 15px;
+                bottom: 15px;
+                left: 15px;
+                padding: 10px 0;
+                background-color: #fff;
+                overflow-y: auto;
+                transition: 0.3s;
+            }
+            #navbar.navbar-mobile ul li {
+                padding: 0;
+            }
+            #navbar.navbar-mobile ul li a {
+                padding: 10px 20px;
+                font-size: 15px;
+                color: #333;
+            }
+        }
+        .footer1 {
+            width: 100%;
+        }
+    </style>
+  <meta property="og:title" content="NGDB™">
+  <meta property="og:description" content="🚀 Leading the next generation of Discord bots with NGDB™ (New Generation Discord Bot) 🔥 Unlimited free AI, including models like DALL·E 3, GPT-4 Turbo, Claude 3 Opus, and many more.">
+  <meta property="og:image" content="src/assets/img/ngdb.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ngdbbot.replit.app">
+  <meta property="og:locale" content="en_US">
+
+   <!-- Open Graph Protocol for Image Preview -->
+
+
+
+  <!-- Image -->
+ <link href="src/assets/img/ngdb.png" rel="icon"> 
+
+  <!-- Vendor CSS Files -->
+  <link href="src/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="src/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="src/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="src/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="src/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+
+  ======================================================== -->
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="src/assets//css/style.css" />
+       <link href="src/assets/css/socialbuttons.css" rel="stylesheet">
+
+       <link href="src/assets/css/terminal.css" rel="stylesheet">
+
+
+
+</head>
+
+
+<body style="background-image: url('src/assets/img/space4.gif');">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+<!-- Logo -->
+      <h1 class="logo">
+          <a href="https://discord.com/api/oauth2/authorize?client_id=990044779800825856&permissions=2080374975&scope=bot">
+              <img src="src/images/ngdblogo.gif" alt="NGDB Logo"> NGDB™
+          </a>
+          <div class="dropdown-content">
+<div class="dropdown-link"><a href="#hero">Home</a></div>
+<div class="dropdown-link"><a href="#services">Purposes</a></div>
+<div class="dropdown-link"><a href="#social">Social</a></div>
+<div class="dropdown-link"><a href="#about">About</a></div>
+<div class="dropdown-link"><a href="/commands">Commands</a></div>
+<div class="dropdown-link"><a href="/privacy">Policy</a></div>
+<div class="dropdown-link"><a href="/tos">ToS</a></div>
+<div class="dropdown-link"><a href="https://discord.com/api/oauth2/authorize?client_id=990044779800825856&permissions=2080374975&scope=bot">Invite</a></div>
+<div class="dropdown-link"><a href="https://discord.gg/x6yjKV4Ux9">Support</a></div>
+              <!-- Add more links as needed -->
+          </div>
+      </h1>
+
+
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#home">Home</a></li>
+          <li><a class="nav-link scrollto" href="#services">Purposes</a></li>
+          <li><a class="nav-link scrollto " href="#social">Social</a></li> 
+          <li><a class="nav-link scrollto" href="#about">About</a></li>        
+<li><a class="nav-link scrollto" href="/commands">Commands</a></li>
+           <li><a class="nav-link scrollto" href="/privacy">Privacy Policy</a></li>
+                      <li><a class="nav-link scrollto" href="/tos">Terms of Service</a></li>
+              <li><a class="nav-link scrollto" href="https://discord.com/api/oauth2/authorize?client_id=990044779800825856&permissions=2080374975&scope=bot">Invite</a></li>
+           <li><a class="nav-link scrollto" href="https://discord.gg/x6yjKV4Ux9">Support</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- Hero -->
+  <div id="home" class="hero route bg-image" style="background-image: url('src/assets/img/tenor.gif');">
+    <div class="overlay-itro"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h1 class="hero-title mb-4" <img src="assets/img/ngdb.png">NGDB™</h1>
+
+          <h4 class="hero-subtitle"><span class="typed" data-typed-items="🚀 Leading the next generation of Discord bots! 🚀, A solution to everything!, A new era of Discord bots is here! NGDB™ leads the way! 🚀🌟, Developed by legendsofngdb#0., Discover the ultimate answer to your Discord needs., Embrace the future of Discord bots where NGDB™ takes the lead! 💫🚀, Your all-inclusive solution for all things Discord., Join the legend and level up your Discord experience., 🚀 Pioneering the future of Discord bot technology!, Elevate your Discord experience with our cutting-edge bot NGDB™!, Unleash the power of Discord with our innovative bot., NGDB™ blazes the trail to a fresh era of Discord bots! 🌟✨, Join the revolution in Discord bot development!, Transform your server with our all-in-one Discord bot., The future of Discord bots is bright thanks to NGDB™! 🌟🌞, Experience Discord like never before with NGDB™., Your Discord server's new best friend has arrived!, Get ready to be amazed by our feature-packed Discord bot., Elevate your community with the ultimate Discord solution., Simplify Discord management with our versatile bot., The legend behind Discord's next big thing: legendsofngdb#0., Unlock endless possibilities with our state-of-the-art bot., Upgrade your server's capabilities with NGDB™, All the Discord tools you need in one powerful bot NGDB™!, Join legendsofngdb#0 and embark on a Discord adventure., Discover the ultimate Discord experience NGDB™., Your Discord server deserves the best and that's us!, Witness the dawn of a new age in Discord bots with NGDB™ at the forefront! 🚀🔥"></span></h4>
+
+        </div>
+      </div>
+    </div>
+  </div><!-- End Hero Section -->
+
+  <main id="main">
+    <br><br><br>
+
+    <!-- Services-->
+    <main id="main">
+        <br><br><br>
+
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="text slide-in">
+                <div class="container px-4 px-lg-5">
+                    <h2 class="text-center" style="color:white">At Your Service</h2>
+                    <hr class="divider" />
+                    <div class="row gx-4 gx-lg-5">
+              <div class="col-lg-3 col-md-6 text-center pop-out">
+                      <div class="mt-5">
+                       <div  class="mb-2"style="color:white"><i class="bi-gem fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2" style="color:white">No Credit Cards</h3>
+                                <h6 style="color:white">That's right, NGDB™ is <strong>completely free</strong>! No pay walls at all!</h6>
+                      </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 text-center pop-out">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2" style="color:white">Updates Regularly</h3>
+                                <h6 style="color:white">NGDB™ is updated regularly to bring <strong>NEW</strong> features and fix bugs.</h6>
+                            </div>
+                        </div>
+          <div class="col-lg-3 col-md-6 text-center pop-out">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2" style="color:white">Reliable</h3>
+                                <h6 style="color:white">NGDB™ has 24/7 uptime!</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 text-center pop-out">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2" style="color:white">We Care</h3>
+                                <h6 style="color:white">If you have any question or concerns contact us! We'll help.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+        </section>
+    </main>
+    <!-- End Main -->
+
+
+<!-- ======= Social Icons End ======= -->
+
+    <section id="social" class="pb-0">
+      <header class="text-center mb-4">
+        <h2 class="lined text-uppercase mb-5" style="color:white">Contacts</h2>
+      </header>  
+                  <div class="text slide-in">
+      <div class="social-container">
+        <ul class="social-icons">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+          <li><a href="https://twitter.com/LegendsOfNGDB"><i class="fab fa-twitter"></i></a></li>
+
+          <li><a href="https://discord.gg/x6yjKV4Ux9"><i class="fab fa-discord"></i></a></li>
+          <li><a href="https://github.com/Legends-of-NGDB"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://discord.com/application-directory/990044779800825856"><i class="fab fa-discord"></i></a></li>
+       <li><a href="https://www.reddit.com/user/legendsofngdb"><i class="fab fa-reddit"></i></a></li>
+        </ul>
+      </div>
+        </div>
+      <br><br>
+    </section>
+
+
+<!-- ======= Social Icons End ======= -->
+
+<!-- ======= Fake Terminal ======= -->
+
+
+<!-- ======= Fake Terminal ======= -->
+
+
+  <!-- ======= About Section ======= -->
+
+      <section id="about" class="about-mf sect-pt4 route">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="box-with-color">
+                          <div class="about-me pt-4 pt-md-0">
+                              <div class="title-box-2">
+                                  <h5 class="title-left">
+                                      About NGDB™
+                                  </h5>
+                                    </div>
+                                      <h5>🌟 <strong><em>FREE: Unlimited DALL·E 3 and GPT-4 Turbo with NGDB™ Discord Bot!</em></strong> 🌟</h5>
+                                <ul>
+                                    <li>Are you tired of mundane conversations? Want to explore the boundaries of imagination? Look no further! Our Discord server brings you the ultimate AI experience, powered by OpenAI's cutting-edge models.</li>
+                                </ul>
+
+                                <h5>🎨 <strong>DALL·E 3: The Artistic Visionary</strong></h5>
+
+                                <ul>
+                                    <li>Create mind-bending images from text prompts! DALL·E 3 turns your wildest ideas into stunning visual masterpieces. Whether it's a surreal landscape, a mythical creature, or a futuristic cityscape, DALL·E 3 has got you covered.</li>
+                                </ul>
+
+                                <h5>🤖 <strong>GPT-4: The Conversational Genius</strong></h5>
+
+                                <ul>
+                                    <li>Chat with GPT-4, the language model that blurs the line between human and machine. Ask it anything—from solving complex math problems to composing poetry. GPT-4's responses are as diverse as your imagination.</li>
+                                </ul>
+
+                                <h5>⭐️ Introducing NGDB™️ ⭐️</h5>
+
+                                <ul>
+                                    <li>Are you <strong>searching</strong> for the perfect Discord bot to take your server to the <strong>next level</strong>? Look no further than <strong>NGDB™</strong>! Our <strong>feature-packed</strong> bot is designed to bring <strong>excitement</strong> and <strong>joy</strong> to your community. With a wide range of amazing features and an intuitive interface, <strong>NGDB™</strong> is tailor-made for both casual users and server owners. <strong>Get ready to explore endless possibilities and create unforgettable experiences.</strong></li>
+                                </ul>
+
+                                <h5>⚙️ Versatile and Intuitive:</h5>
+
+                                <ul>
+                                    <li><strong>NGDB™</strong> offers a wide range of amazing features that will make your Discord experience unforgettable. From <strong>powerful moderation</strong> tools to <strong>entertaining games</strong> and <strong>customizable commands</strong>, NGDB™ has it all. Explore its intuitive interface and discover the true potential of your server. ⚙️🚀</li>
+                                </ul>
+
+                                <h5>🛡️ Robust Moderation Tools:</h5>
+
+                                <ul>
+                                    <li>Keep your server <strong><em>safe</em></strong> and <strong><em>secure</em></strong> with NGDB™'s powerful moderation tools. From banning and kicking users to <strong><em>automated moderation</em></strong> with features like <strong><em>anti-link</em></strong> protection, <strong><em>flagged words</em></strong>, and <strong><em>spam prevention</em></strong>, NGDB™ ensures a <strong>peaceful</strong> and <strong>enjoyable</strong> environment for all. 🛡️🔨</li>
+                                </ul>
+
+                                <h5>🎵 24/7 Music:</h5>
+
+                                <ul>
+                                    <li>Bring the <strong>rhythm</strong> to your server with NGDB™'s <strong>intuitive music</strong> player. Play tracks from <strong>YouTube</strong>, <strong>SoundCloud</strong>, or <strong>Spotify</strong> directly in your Discord server and <strong>create</strong> <strong><em>unforgettable musical experiences</em></strong>. Whether you're hosting a party or simply chilling with friends, NGDB™ has your back. 🎵🎧</li>
+                                </ul>
+
+                                <h5>🎮 Endless Fun and Games:</h5>
+
+                                <ul>
+                                    <li>Get your <strong>game</strong> on with NGDB™'s exciting games like <strong>Snake, Hangman, Trivia</strong>, and more. <strong>Compete</strong> with your friends, <strong>challenge</strong> your skills, and enjoy endless entertainment right in your server. Let the <strong>fun</strong> and <strong>laughter</strong> begin! 🎮🎉</li>
+                                </ul>
+
+                                <h5>💬 Express Yourself with Customization:</h5>
+
+                                <ul>
+                                    <li><strong>Unleash</strong> your <strong>creativity</strong> and make your server <strong>truly unique</strong> with NGDB™'s customizable commands. Create custom memes, images, and more, and welcome new members with personalized messages. NGDB™ allows you to express yourself and make a <strong>lasting impression.</strong> 💬🎨</li>
+                                </ul>
+
+                                <h5>🌟 All-in-One Discord Bot:</h5>
+
+                                <ul>
+                                    <li>NGDB™ is the <strong><em>all-in-one solution</em></strong> for your server needs. With its <strong><em>versatile moderation tools</em></strong>, <strong><em>music player</em></strong>, <strong><em>entertaining games</em></strong>, <strong><em>customizable commands</em></strong>, and <strong><em>much more</em></strong>, NGDB™ covers all aspects to elevate your Discord experience. Explore the endless possibilities and <strong><em>unlock</em></strong> the true potential of your server. ✨🔑</li>
+                                </ul>
+
+                                <h5>⭐️ Try NGDB™️ Today:</h5>
+
+                                <ul>
+                                    <li>Experience NGDB™ for yourself! Invite this incredible bot to your server and watch your community thrive. Your server members will love it, and you'll create a <strong><em>vibrant</em></strong> and <strong><em>engaging</em></strong> community. <strong>Elevate</strong> your Discord experience with <strong>NGDB™</strong> now! 🌟🚀</li>
+                                </ul>
+
+                                <h5>💌 | Invite NGDB™:</h5>
+                                <ul>
+                                    <li>Invite the bot to your server using by clicking there: <a href="https://discord.com/api/oauth2/authorize?client_id=990044779800825856&permissions=2080374975&scope=bot">Click Here!</a></li>
+                                </ul>
+
+                                <h5>🌐 | Visit our Website:</h5>
+                                <ul>
+                                    <li><a href="https://ngdb.replit.app">Learn more about NGDB™ and explore its features on our website!</a></li>
+                                </ul>
+
+                                <ul>
+                                    <li>Spice up your Discord server with NGDB™ and create memorable experiences for everyone! 🎆🎉</li>
+                                </ul>
+
+                              <button id="aboutButton" style="padding: 10px 20px; border-radius: 5px; background-color: #0069d9; color: white; border: none; cursor: pointer;" onclick="window.location.href='/invite'">Learn More</button>
+                              <button id="themeButton" style="padding: 10px 20px; margin-left: 10px; border-radius: 5px; background-color: white; color: black; border: none; cursor: pointer;">Change Theme</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <script>
+              document.getElementById('themeButton').addEventListener('click', function() {
+                  document.body.classList.toggle('dark-theme');
+              });
+          </script>
+      </section><!-- End About Section -->
+
+      <br><br><br>
+
+   <!-- ======= Footer ======= -->
+
+    <footer class="footer1">
+        <div class="icon">
+            <img src="src/images/ngdblogo.gif" alt="NGDB Logo">
+        </div>
+        <div class="links">
+            <p><a href="/invite">Invite</a></p>
+            <p><a href="/discord">Support</a></p>
+             <p><a href="/vote">Vote</a></p>
+        </div>
+        <div class="perks">
+            <p>Perks:</p>
+            <ul>
+                <li><a href="https://canary.discord.com/api/oauth2/authorize?client_id=990044779800825856&permissions=2065275681910&scope=bot">• Extra giveaway entries in any giveaway that uses NGDB™.</a></li>
+                <li><a href="https://canary.discord.com/api/oauth2/authorize?client_id=990044779800825856&permissions=2065275681910&scope=bot">• 15 extra AI credits for image generation and generative AI.</a></li>
+            </ul>
+        </div>
+         
+            <button id="redirectButton">Add NGDB™
+              <div class="star-1">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-2">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-3">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-4">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-5">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+              <div class="star-6">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+              </div>
+            </button>
+
+              <script>
+                document.getElementById('redirectButton').addEventListener('click', function() {
+                  window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=990044779800825856&permissions=2080374975&scope=bot';
+                });
+              </script>
+
+          
+    </footer>
+
+<style>
+    .footer1 {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: left;
+        position: relative;
+    }
+    .footer1 a {
+        color: white;
+        text-decoration: none;
+    }
+    .footer1 a:hover {
+        color: darkblue;
+    }
+    .footer1 .perks p {
+        font-weight: bold;
+        color: white;
+    }
+    .footer1 .perks ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .footer1 .perks li {
+        margin: 5px 0;
+    }
+    .footer1 .perks li a {
+        display: inline-block;
+    }
+    .footer1 .icon img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .footer1 .links {
+        margin-bottom: 20px;
+    }
+    .footer1 .links p {
+        display: inline;
+        margin: 0 10px;
+        color: white;
+        font-size: 15px;
+    }
+    .footer1 .links a {
+        color: white;
+        text-decoration: none;
+    }
+    .footer1 .links a:hover {
+        color: darkblue;
+    }
+</style>
+
+
+
+    <!-- ======= Footer End ======= -->
+
+
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="src/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="src/assets/vendor/php-email-form/validate.js"></script>
+  <script src="src/assets/vendor/purecounter/purecounter.js"></script>
+  <script src="src/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="src/assets/vendor/typed.js/typed.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="src/assets/js/index.js"></script>
+
+</body>
+
+</html>
