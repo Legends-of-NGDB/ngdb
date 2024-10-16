@@ -7,6 +7,6 @@
   "routes": [
     { "src": "/", "dest": "/website/pages/ngdb.html" },
     { "src": "/pages/(.*)", "dest": "/website/pages/$1" },
-    { "src": "/(.*)", "dest": "/website/src/index.js" }
+    { "src": "/(.*)", "dest": "index.js" }
   ]
 }
