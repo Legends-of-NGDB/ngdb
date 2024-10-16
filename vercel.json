@@ -2,11 +2,15 @@
   "version": 2,
   "builds": [
     { "src": "index.js", "use": "@vercel/node" },
-    { "src": "website/pages/**/*.html", "use": "@vercel/static" }
+    { "src": "website/pages/**/*.html", "use": "@vercel/static" },
+    { "src": "website/src/**/*", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/", "dest": "/website/pages/ngdb.html" },
-    { "src": "/pages/(.*)", "dest": "/website/pages/$1" },
+    { "src": "/tos", "dest": "/website/pages/tos.html" },
+    { "src": "/privacy", "dest": "/website/pages/privacy.html" },
+    { "src": "/website/pages/(.*)", "dest": "/website/pages/$1" },
+    { "src": "/website/src/assets/(.*)", "dest": "/website/assets/$1" },
     { "src": "/(.*)", "dest": "index.js" }
   ]
 }
