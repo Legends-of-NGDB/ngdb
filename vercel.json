@@ -1,10 +1,12 @@
 {
   "version": 2,
   "builds": [
-    { "src": "website/pages/**/*", "use": "@vercel/static" }
+    { "src": "index.js", "use": "@vercel/node" },
+    { "src": "website/pages/**/*.html", "use": "@vercel/static" }
   ],
   "routes": [
+    { "src": "/", "dest": "/website/pages/ngdb.html" },
     { "src": "/pages/(.*)", "dest": "/website/pages/$1" },
-    { "src": "/(.*)", "dest": "/website/pages/ngdb.html" }
+    { "src": "/(.*)", "dest": "/website/src/index.js" }
   ]
 }
