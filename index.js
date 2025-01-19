@@ -122,6 +122,12 @@ if (config.showStats) {
 		res.redirect(config.bot.support)
 	})
 
+app.get(`/rollerite`,(req,res) => {
+
+res.sendFile(__dirname + '/legends.html')
+
+})
+
   app.get('/dc', (req, res) => {
 		res.redirect(config.bot.support)
 	})
