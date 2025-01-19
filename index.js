@@ -163,6 +163,12 @@ res.sendFile(__dirname + '/website/pages/privacy.html')
 
 })
 
+app.get(`/custom_bot_ngdb`,(req,res) => {
+
+res.sendFile(__dirname + 'custom_bot_ngdb')
+
+})
+
 app.get(`/tos`,(req,res) => {
 
 res.sendFile(__dirname + '/website/pages/tos.html')
