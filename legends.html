@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Design & Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1b1b;
+            color: #e0e0e0;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        header p {
+            margin: 0;
+            font-size: 14px;
+            font-style: italic;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .alert {
+            background-color: #1183ee;
+            color: white;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+            border-radius: 5px;
+        }
+        .alert-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+        .alert button:hover {
+            color: #81c784;
+        }
+        .section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin: 20px 0 10px;
+            font-size: 22px;
+            color: #81c784;
+        }
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .section::before, .section::after {
+            content: "";
+            display: block;
+            height: 5px;
+            background-color: #2e7d32;
+            width: 100%;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #00000015;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function closeAlert() {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://cdn.discordapp.com/avatars/990044779800825856/a_6751883b9c01409fd06e168110644139.gif?size=4096" alt="NGDB Logo">
+        <div>
+            <h1>Server Design & Development - NGDB™</h1>
+            <p>by @legendsofngdb</p>
+        </div>
+    </header>
+    <div class="container">
+        <div id="alertBox" class="alert">
+            <span>Looking to hire me? Ask me anything at <a href="https://discord.gg/ngdb" style="color: #a5d6a7; text-decoration: none;">discord.gg/ngdb</a></span>
+            <button onclick="closeAlert()">&times;</button>
+        </div>
+
+        <hr aria-orientation="horizontal" class="chakra-divider css-1ip5dck"><div class="content entity-content__description css-18r9pyf"><style>
+            :root { --top-gg-colors-brand-100: #adadf5; --bg-url: url("https://i.imgur.com/8jrGxES.png"); --grid-url: url("https://imgur.com/x6C4YGU.png"); }
+            #bg-background-gradient stop:first-of-type { stop-color: #2a2a71; }
+            rect.StyleProvider__StyledGradientRect-sc-1wukuln-1.eMHeuz { height: 700px; }
+            linearGradient#bg-background-gradient { transform: rotate(90deg); }
+            .css-1p8e5k1 { color: #676790; }
+            .css-1ebbhgf { background-color: #32324f; color: white !important; width: 100px; }
+            .css-1ebbhgf:hover { background-color: #3f3f60; }
+            .css-1vcqbmk { padding: 1px; background: linear-gradient(to bottom right, #adadf599, #32324f 50%); border-radius: 10px; }
+            .chakra-stack.css-1a0eqsc .chakra-button { padding: 12px 20px !important; }
+            .iNruBJ { stroke:rgb(42, 42, 104); stroke-width: 1px; fill: #7979ccb3; }
+            .hYsIDf { stroke:rgb(12, 12, 234); stroke-width: 1px; fill: none; }
+            button.chakra-button.css-nnp25b { background: var(--top-gg-colors-ui-5); }
+            .css-1t10vff { color:rgb(115, 115, 193) !important; }
+            hr.chakra-divider.css-1ip5dck { display: none; }
+            .guilds-background { position: absolute; inset: 0; background-image: var(--bg-url); mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); animation: moveBackgroundX 60s linear infinite; background-position-x: 0; }
+            @keyframes moveBackgroundX { from { background-position-x: 0; } to { background-position-x: 100%; } }
+            .guilds-background::before { content: ""; position: absolute; inset: 0; background-image: var(--bg-url); background-size: cover; background-position-x: 0; will-change: background-position-y; animation: scrollBackgroundY 120s linear infinite; }
+            @media (prefers-reduced-motion: no-preference) {
+            @keyframes scrollBackgroundY { 0% { background-position-y: -300px; } 100% { background-position-y: 300px; } } }
+            @media (min-width: 768px) { .md\:hero-mask { mask-image: radial-gradient(35% 80% at 50% 50%,black,transparent) !important; } }
+            .hero-mask { mask-image: radial-gradient(50% 80% at 50% 50%, black, transparent); }
+            @keyframes rotateClockwise { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+            @keyframes rotateCounterClockwise { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
+            .circle.small { animation: rotateClockwise 60s linear infinite; }
+            .circle.medium { animation: rotateCounterClockwise 60s linear infinite; }
+            .circle.large { animation: rotateClockwise 90s linear infinite; }
+            .guilds-span { color: transparent; background-image: linear-gradient(to right bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0)); background-color:rgb(8, 103, 198); background-clip: text; }
+            .bg-\[radial-gradient\(100\%_100\%_at_top_left\2c white\2c white\2c rgb\(74\2c 32\2c 138\2c \.5\)\)\] { background-image: radial-gradient(100% 100% at top left,white,white,rgb(74,32,138,.5)); }
+            .fix-whitespace * { white-space: normal; }
+            @media (min-width: 768px) { .md\:text-6xl { font-size: 3.75rem; line-height: 1; } }
+          </style>
+          <div style="position:relative;" class="fix-whitespace">
+            <div class="guilds-background"></div>
+            <section style="height: 24rem;overflow: hidden;position: relative;mask-image: linear-gradient(to bottom,transparent,black 45%,black 65%,transparent);">
+              <div style="position: absolute;inset: 0;background-color:rgb(24, 0, 235);background-blend-mode: overlay;height: 100%;width: 100%;background-image: var(--grid-url);" class="md:hero-mask hero-mask">
+                <div style="position: absolute;height: 344px;width: 344px;border-radius: 9999px;border: 1px solid white;top: 50%;left: 50%;transform: translate(-50%, -50%);opacity: 0.5;" class="circle small">
+                  <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 50%;left: 0px;background-color: white;border-radius: 9999px;transform: translate(-50%, -50%);"></div>
+                  <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 0px;left: 50%;background-color: white;border-radius: 9999px;transform: translate(-50%, -50%);"></div>
+                  <div style="position: absolute;height: 1.25rem;width: 1.25rem;top: 50%;left: 100%;border-width: 1px;border-color: white;border-radius: 9999px;transform: translate(-50%, -50%);display: inline-flex;align-items: center;justify-content: center;">
+                    <div style="height: 0.5rem;width: 0.5rem;background-color: white;border-radius: 9999px;"></div>
+                  </div>
+                </div>
+                <div style="position: absolute;height: 444px;width: 444px;border-radius: 9999px;border: 1px dashed white;top: 50%;left: 50%;transform: translate(-50%, -50%);" class="circle medium"></div>
+                <div style="position: absolute;height: 544px;width: 544px;border-radius: 9999px;border: 1px solid white;top: 50%;left: 50%;transform: translate(-50%, -50%);" class="circle large">
+                  <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 50%;left: 0px;background-color: white;border-radius: 9999px;transform: translate(-50%,-50%);"></div>
+                  <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 50%;left: 100%;background-color: white;border-radius: 9999px;transform: translate(-50%,-50%);"></div>
+                </div>
+                <div style="position: relative;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+                  <div class="bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,.5))]" style="font-size: 6rem;line-height: 1;margin-left: auto;margin-right: auto;font-weight: 600;letter-spacing: -0.05em;background-color: white;color: transparent;background-clip: text;text-align: center;position: relative;border-bottom: none !important;">
+                    <div style="position: absolute; inset: 0;">
+                      
+                    </div>
+                    N𝔾𝔻B
+                  </div>
+                </div>
+              </div>
+            </section>
+
+<p>My mission is simple: to revolutionize how you enhance your Discord community. By leveraging cutting-edge AI technology and advanced conversational algorithms, we aim to make it easier than ever to bring free, intelligent language models - and other attributes to your server. With my help and my creation, you can foster deeper connections, engage your members effortlessly, and watch your community thrive like never before. Let’s jump in shall we?</p>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <img src="ngdb_welcome.png" alt="Section 1 Image">
+            <h2>Welcome Messages</h2>
+            Make a lasting first impression with <span class="guilds-span">NGDB™️</span>'s personalized welcome messages. Greet new members with custom messages that make them feel right at home while highlighting your server's unique vibe. Whether it’s a warm welcome, important rules, or links to key channels, our system ensures every newcomer feels valued and ready to dive into your community.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <img src="ngdb_music.png" alt="Section 2 Image">
+            <h2>24/7 Music</h2>
+            <p>Elevate your Discord experience with <span class="guilds-span">NGDB™️</span>. Our 24/7 music feature keeps your server lively and engaging, providing non-stop entertainment for your community. Whether you're hosting a chill hangout or an epic game night, our seamless music integration ensures the perfect soundtrack anytime, anywhere.</p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <img src="ngdb_layout.png" alt="Section 3 Image">
+            <h2>Channel Layout Optimization</h2>
+            <p>When organizing channels to maximize engagement and usability, I focus on simplicity and clarity. I prioritize creating clear, purpose-driven channels to prevent clutter and confusion. I always make sure to use clear names for each channel, ensuring it’s easy for members to navigate. Grouping related topics and creating categories is key—this keeps the server organized and members can easily find what they’re looking for. I also make sure to encourage active participation by using interactive channels like polls and events. And of course, I regularly assess and adjust based on feedback to keep things fresh and engaging.</p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <img src="custom_bot_ngdb.png" alt="Section 4 Image">
+            <h2>Custom Bots and Features</h2>
+            <p>Custom bots and integrations are game-changers for enhancing the functionality of my Discord server. They allow me to automate tasks, like moderation and leveling, to ensure smooth and efficient management. With custom bots, I can create tailored experiences, such as personalized welcome messages or unique commands that fit the needs of my community. Integrations with external services, like music bots or game stats trackers, keep members engaged and informed in real-time. The added convenience of integrating external APIs means I can continuously offer new, exciting features that keep my server dynamic and user-friendly.</p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <img src="reaction-roles.png" alt="Section 5 Image">
+            <h2>Community Building Strategies</h2>
+            <p>Fostering a thriving community culture starts with making sure everyone feels welcome and heard. I focus on creating a positive environment where members can connect over shared interests. One of the best ways I encourage engagement is through reaction roles, allowing members to choose their own roles based on personal interests, which divides communities into smaller, more focused groups. This helps people find like-minded individuals and strengthens those smaller sub-communities within the larger one.</p>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <img src="ngdb_giveaway.png" alt="Section 6 Image">
+            <h2>Event Hosting Ideas</h2>
+            <p>To bring communities together, focus on hosting events that are both fun and interactive. One idea is to organize themed game nights, where everyone can join in, whether it’s trivia, role-playing, or casual gaming. These events help build stronger bonds and keep the community engaged and excited.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>If you would like to contact me to learn more about what I offer, please visit <a href="https://discord.gg/ngdb" style="color: #a5d6a7; text-decoration: none;">discord.gg/ngdb</a> and open a ticket in #tickets!</p>
+        <p>Note: This document is for clients interested in hiring me through services such as Discord Bot Development and Server Setup. All transactions will be made through Rollerite to provide an easy-to-pay experience except if you specifically request that I host your project.</p>
+    </footer>
+</body>
+</html>
