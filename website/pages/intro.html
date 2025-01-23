@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NGDB™ - Your AI powered Discord Bot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta property="og:title" content="NGDB™">
+      <meta property="og:description" content="🚀 Leading the next generation of Discord bots with NGDB™ (New Generation Discord Bot) 🔥 Unlimited free AI, including models like DALL·E 3, GPT-4 Turbo, Claude 3 Opus, and many more. #ngdb #ngdbbot #ngdbai #ngdbdiscordbot"">
+      <meta property="og:image" content="src/assets/img/ngdb.png">
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Ngdbbot.replit.app">
+      <meta property="og:locale" content="en_US">
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            overflow: hidden; 
+        }
+        canvas {
+            display: block;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        #player {
+        }
+        #close {
+        }
+        video {
+            display: none; 
+        }
+        #typing-text {
+            color: white;
+            position: absolute;
+            text-align: absolute
+        }
+        #muteButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #muteButton:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="space"></canvas>
+    <script src="script.js"></script>
+
+    <hr aria-orientation="horizontal" class="chakra-divider css-1ip5dck"><div class="content entity-content__description css-18r9pyf"><style>
+      .guilds-background {  position: absolute; inset: 0; background-image: var(--bg-url); mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); animation: moveBackgroundX 60s linear infinite; background-position-x: 0; }
+      @keyframes moveBackgroundX { from { background-position-x: 0; } to { background-position-x: 100%; } }
+      .guilds-background::before { content: ""; position: absolute; inset: 0; background-image: var(--bg-url); background-size: cover; background-position-x: 0; will-change: background-position-y; animation: scrollBackgroundY 120s linear infinite; }
+      @media (prefers-reduced-motion: no-preference) {
+      @keyframes scrollBackgroundY { 0% { background-position-y: -300px; } 100% { background-position-y: 300px; } } }
+      @media (min-width: 768px) { .md\:hero-mask { mask-image: radial-gradient(35% 80% at 50% 50%,black,transparent) !important; } }
+      .hero-mask { mask-image: radial-gradient(50% 80% at 50% 50%, black, transparent); }
+      @keyframes rotateClockwise { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+      @keyframes rotateCounterClockwise { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
+      .circle.small { animation: rotateClockwise 60s linear infinite; }
+      .circle.medium { animation: rotateCounterClockwise 60s linear infinite; }
+      .circle.large { animation: rotateClockwise 90s linear infinite; }
+      .guilds-span { color: transparent; background-image: linear-gradient(to right bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0)); background-color:rgb(8, 103, 198); background-clip: text; }
+      .bg-\[radial-gradient\(100\%_100\%_at_top_left\2c white\2c white\2c rgb\(74\2c 32\2c 138\2c \.5\)\)\] { background-image: radial-gradient(100% 100% at top left,white,white,rgb(74,32,138,.5)); }
+      .fix-whitespace * { white-space: normal; }
+      @media (min-width: 768px) { .md\:text-6xl { font-size: 3.75rem; line-height: 1; } }
+    </style>
+    <div style="position:relative;" class="fix-whitespace">
+      <div class="guilds-background"></div>
+      <section style="height: 24rem;overflow: hidden;position: relative;mask-image: linear-gradient(to bottom,transparent,black 45%,black 65%,transparent);">
+        <div style="position: absolute;inset: 0;background-color:rgb(24, 0, 235);background-blend-mode: overlay;height: 100%;width: 100%;background-image: var(--grid-url);" class="md:hero-mask hero-mask">
+          <div style="position: absolute;height: 344px;width: 344px;border-radius: 9999px;border: 1px solid white;top: 50%;left: 50%;transform: translate(-50%, -50%);opacity: 0.5;" class="circle small">
+            <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 50%;left: 0px;background-color: white;border-radius: 9999px;transform: translate(-50%, -50%);"></div>
+            <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 0px;left: 50%;background-color: white;border-radius: 9999px;transform: translate(-50%, -50%);"></div>
+            <div style="position: absolute;height: 1.25rem;width: 1.25rem;top: 50%;left: 100%;border-width: 1px;border-color: white;border-radius: 9999px;transform: translate(-50%, -50%);display: inline-flex;align-items: center;justify-content: center;">
+              <div style="height: 0.5rem;width: 0.5rem;background-color: white;border-radius: 9999px;"></div>
+            </div>
+          </div>
+          <div style="position: absolute;height: 444px;width: 444px;border-radius: 9999px;border: 1px dashed white;top: 50%;left: 50%;transform: translate(-50%, -50%);" class="circle medium"></div>
+          <div style="position: absolute;height: 544px;width: 544px;border-radius: 9999px;border: 1px solid white;top: 50%;left: 50%;transform: translate(-50%, -50%);" class="circle large">
+            <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 50%;left: 0px;background-color: white;border-radius: 9999px;transform: translate(-50%,-50%);"></div>
+            <div style="position: absolute;height: 0.5rem;width: 0.5rem;top: 50%;left: 100%;background-color: white;border-radius: 9999px;transform: translate(-50%,-50%);"></div>
+          </div>
+          <div style="position: relative;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+            <div class="bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,.5))]" style="font-size: 6rem;line-height: 1;margin-left: auto;margin-right: auto;font-weight: 600;letter-spacing: -0.05em;background-color: white;color: transparent;background-clip: text;text-align: center;position: relative;border-bottom: none !important;">
+              <div style="position: absolute; inset: 0;">
+
+              </div>
+              N𝔾𝔻B
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <h1 id="typing-text"></h1>
+
+
+        <video id="mediaPlayer" autoplay>
+            <source src="/videoplayback.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    
+        <body>
+            <canvas id="space"></canvas>
+            <audio id="mediaPlayer" src="your-audio-file.mp3" loop></audio>
+            <button id="muteButton">❌ Sound</button>
+
+            <script>
+                const media = document.getElementById('mediaPlayer');
+                const muteButton = document.getElementById('muteButton');
+
+                let muted = true;
+                // Automatically play on page load
+                document.addEventListener('click', () => {
+                    if (muted) {
+                        media.play().catch((err) => {
+                            console.error("Audio failed to play:", err);
+                        });
+                        muted = false;
+                        muteButton.textContent = '✅ Sound';
+                    } else {
+                        media.muted = true; 
+                        muted = true;
+                        muteButton.textContent = '❌ Sound';
+                    }
+                    
+   
+                });
+
+
+                const canvas = document.getElementById('space');
+                const ctx = canvas.getContext('2d');
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                const stars = [];
+                const numStars = 200;
+
+                // Create stars
+                for (let i = 0; i < numStars; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 2, // Initial star sizes
+                        speed: Math.random() * 0.5 + 0.1 // Initial varying speeds
+                    });
+                }
+
+                let elapsedTime = 0; // Total elapsed time
+                let lastUpdate = Date.now(); // Track last update time
+
+                function animateStars() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    // Time calculation
+                    const currentTime = Date.now();
+                    const deltaTime = currentTime - lastUpdate;
+
+                    // Update every 200ms
+                    if (deltaTime >= 200) {
+                        elapsedTime += deltaTime / 1000; // Convert to seconds
+                        stars.forEach((star) => {
+                            // Increase speed and size gradually
+                            star.speed += (5 / 5); // Speed increases by 5 per second
+                            star.radius += (0.5 / 5); // Radius increases by 0.5 per second
+                        });
+                        lastUpdate = currentTime; // Update last update time
+                    }
+
+                    // Animate each star
+                    stars.forEach((star) => {
+                        // Draw star
+                        ctx.beginPath();
+                        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = '#fff'; // White stars
+                        ctx.fill();
+
+                        // Move star
+                        star.y += star.speed;
+
+                        // Reset star position when it goes off screen
+                        if (star.y > canvas.height) {
+                            star.y = 0;
+                            star.x = Math.random() * canvas.width;
+                            star.radius = Math.random() * 2; // Reset to initial size
+                            star.speed = Math.random() * 0.5 + 0.1; // Reset to initial speed
+                        }
+                    });
+
+                    requestAnimationFrame(animateStars);
+                }
+
+                // Animate stars
+                animateStars();
+
+                setTimeout(() => {
+                    window.location.href = '/app'; 
+                }, 15000); 
+
+                const typingText = document.getElementById("typing-text");
+                let text = "Welcome to NGDB, currently redirecting you...";
+                let i = 0;
+
+                function typeWriter() {
+                    if (i < text.length) {
+                        typingText.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100); 
+                    }
+                }
+
+                typeWriter();
+            </script>
+</body>
+</html>
