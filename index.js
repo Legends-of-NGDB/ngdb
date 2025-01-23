@@ -100,14 +100,14 @@ if (config.showStats) {
 });
 
     app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/intro.html')
+	render(res, req, 'intro.html');
 	});
 
   client.login(process.env.token)
 
 } else {
     app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/intro.html')
+	render(res, req, 'intro.html');
 	});
 }
 
