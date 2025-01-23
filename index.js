@@ -112,11 +112,13 @@ if (config.showStats) {
 
 } else {
     app.get('/', (req, res) => {
-		render(res, req, 'ngdb.html');
+	res.sendFile(__dirname + '/intro.html')
 	});
 }
 
-
+app.get('/app', (req, res) => {
+render(res, req, 'ngdb.html');
+})
 
 	app.get('/discord', (req, res) => {
 		res.redirect(config.bot.support)
