@@ -99,13 +99,8 @@ if (config.showStats) {
    intents: [],
 });
 
-   let servercount = client.guilds.cache.reduce((a,b) => a+b.memberCount, 0);
-
-  app.get('/', (req, res) => {
-		render(res, req, 'ngdb.html', {
-      guilds: client.guilds.cache.size,
-      users: servercount
-    });
+    app.get('/', (req, res) => {
+	res.sendFile(__dirname + '/intro.html')
 	});
 
   client.login(process.env.token)
