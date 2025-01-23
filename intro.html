@@ -35,6 +35,21 @@
             position: absolute;
             text-align: absolute
         }
+        #muteButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #muteButton:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
     </style>
 </head>
 <body>
@@ -94,79 +109,117 @@
             Your browser does not support the video element.
         </video>
     
-        <script>
-            const media = document.getElementById('mediaPlayer');
+        <body>
+            <canvas id="space"></canvas>
+            <audio id="mediaPlayer" src="your-audio-file.mp3" loop></audio>
+            <button id="muteButton">❌ Sound</button>
 
-            media.play();
+            <script>
+                const media = document.getElementById('mediaPlayer');
+                const muteButton = document.getElementById('muteButton');
 
-            media.addEventListener('ended', () => {
-                window.location.href = '/app';
-            });
-
-            const canvas = document.getElementById('space');
-            const ctx = canvas.getContext('2d');
-
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            const stars = [];
-            const numStars = 200;
-
-            for (let i = 0; i < numStars; i++) {
-                stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 2, 
-                    speed: Math.random() * 0.5 + 0.1 
-                });
-            }
-
-            let startTime = Date.now(); 
-            function animateStars() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                const elapsedTime = (Date.now() - startTime) / 200; 
-
-                stars.forEach((star) => {
-
-                    ctx.beginPath();
-                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = '#fff'; 
-                    ctx.fill();
-
-                  
-                    const speedMultiplier = 1 + Math.floor(elapsedTime) * 1; 
-                    star.y += star.speed * speedMultiplier;
-
-          
-                    if (star.y > canvas.height) {
-                        star.y = 0;
-                        star.x = Math.random() * canvas.width;
+                let muted = true;
+                // Automatically play on page load
+                document.addEventListener('click', () => {
+                    if (muted) {
+                        media.play().catch((err) => {
+                            console.error("Audio failed to play:", err);
+                        });
+                        muted = false;
+                        muteButton.textContent = '✅ Sound';
+                    } else {
+                        media.muted = true; 
+                        muted = true;
+                        muteButton.textContent = '❌ Sound';
                     }
+                    
+   
                 });
 
-                requestAnimationFrame(animateStars);
-            }
 
-            animateStars();
+                const canvas = document.getElementById('space');
+                const ctx = canvas.getContext('2d');
 
-            setTimeout(() => {
-                window.location.href = '/app'; 
-            }, 15000); 
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
 
-            const typingText = document.getElementById("typing-text");
-            let text = "Welcome to NGDB, currently redirecting you...";
-            let i = 0;
+                const stars = [];
+                const numStars = 200;
 
-            function typeWriter() {
-                if (i < text.length) {
-                    typingText.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100); 
+                // Create stars
+                for (let i = 0; i < numStars; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 2, // Initial star sizes
+                        speed: Math.random() * 0.5 + 0.1 // Initial varying speeds
+                    });
                 }
-            }
 
-            typeWriter();
-        </script>
+                let elapsedTime = 0; // Total elapsed time
+                let lastUpdate = Date.now(); // Track last update time
+
+                function animateStars() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    // Time calculation
+                    const currentTime = Date.now();
+                    const deltaTime = currentTime - lastUpdate;
+
+                    // Update every 200ms
+                    if (deltaTime >= 200) {
+                        elapsedTime += deltaTime / 1000; // Convert to seconds
+                        stars.forEach((star) => {
+                            // Increase speed and size gradually
+                            star.speed += (5 / 5); // Speed increases by 5 per second
+                            star.radius += (0.5 / 5); // Radius increases by 0.5 per second
+                        });
+                        lastUpdate = currentTime; // Update last update time
+                    }
+
+                    // Animate each star
+                    stars.forEach((star) => {
+                        // Draw star
+                        ctx.beginPath();
+                        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = '#fff'; // White stars
+                        ctx.fill();
+
+                        // Move star
+                        star.y += star.speed;
+
+                        // Reset star position when it goes off screen
+                        if (star.y > canvas.height) {
+                            star.y = 0;
+                            star.x = Math.random() * canvas.width;
+                            star.radius = Math.random() * 2; // Reset to initial size
+                            star.speed = Math.random() * 0.5 + 0.1; // Reset to initial speed
+                        }
+                    });
+
+                    requestAnimationFrame(animateStars);
+                }
+
+                // Animate stars
+                animateStars();
+
+                setTimeout(() => {
+                    window.location.href = '/app'; 
+                }, 15000); 
+
+                const typingText = document.getElementById("typing-text");
+                let text = "Welcome to NGDB, currently redirecting you...";
+                let i = 0;
+
+                function typeWriter() {
+                    if (i < text.length) {
+                        typingText.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100); 
+                    }
+                }
+
+                typeWriter();
+            </script>
 </body>
 </html>
