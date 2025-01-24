@@ -104,7 +104,7 @@
     <h1 id="typing-text"></h1>
 
 
-         <audio id="mediaPlayer" autoplay>
+        <audio id="mediaPlayer" autoplay>
             <source src="/videoplayback.mp4"  type="audio/mpeg" controls>
                     Your browser does not support the audio element.
                 </audio>
@@ -119,16 +119,13 @@
                 const muteButton = document.getElementById('muteButton');
 
                 let muted = true;
-
-      media.play().catch((err) => {
-                            console.error("Audio failed to play:", err);
-                        });
                 // Automatically play on page load
                 document.addEventListener('click', () => {
                     if (muted) {
                         media.play().catch((err) => {
                             console.error("Audio failed to play:", err);
                         });
+                        media.muted = false; 
                         muted = false;
                         muteButton.textContent = '✅ Sound';
                     } else {
@@ -209,7 +206,7 @@
 
                 setTimeout(() => {
                     window.location.href = '/app'; 
-                }, 15000); 
+                }, 9000); 
 
                 const typingText = document.getElementById("typing-text");
                 let text = "Welcome to NGDB, currently redirecting you...";
@@ -227,3 +224,4 @@
             </script>
 </body>
 </html>
+
